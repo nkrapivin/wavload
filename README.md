@@ -5,9 +5,9 @@ Works on GameMaker: Studio 1.4 and above, importing this project into newer GM v
 
 ## Usage
 - `audio_load_wav(fname)` loads file `fname` and returns the wav array.
-- `audio_load_wav_buffer(buffer,[offset])` loads sound from `buffer` starting from `offset`, if none specified offset 0 is assumed.
-- `audio_free_wav(arr)` properly frees the wav sound loaded by `audio_load_wav*` functions, the array must not be used after you called this function.
-- `audio_exists_wav(snd)` checks that the wav array is valid.
+- `audio_load_wav_buffer(buffer,[offset])` loads sound from `buffer` starting from `offset` and returns the wav array, if no offset was specified, offset 0 is assumed.
+- `audio_free_wav(arr)` properly frees the wav sound loaded by `audio_load_wav*` functions, the array, buffer, and the sound must NOT be used after you called this function.
+- `audio_exists_wav(snd)` checks that the wav array (and both the buffer and the sound) is valid.
 - WAV Array:
   - [0] - GM:S Audio Index, use in `audio_*` functions except `audio_exists` and `audio_destroy_stream`.
   - [1] - Raw Sound Data Buffer Index, DO NOT FREE this buffer, it's only there just so `audio_free_wav` can free it.
